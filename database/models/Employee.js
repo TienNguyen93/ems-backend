@@ -3,12 +3,12 @@ const db = require('../db');
 
 const Employee = db.define("employee", {
 
-  firstname: {
+  first_name: {
     type: Sequelize.STRING,
     allowNull: false
   },
 
-  lastname: {
+  last_name: {
     type: Sequelize.STRING,
     allowNull: false
   },
