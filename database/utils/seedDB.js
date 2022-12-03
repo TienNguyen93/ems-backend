@@ -10,7 +10,6 @@ const seedDB = async () => {
 	const dummyTask = await Task.create({
 		description: "Build space rocket",
         priority_level: "Low",
-        completion_level: false
 	});
 
 	await dummyTask.setEmployee(dummyEmployee);
