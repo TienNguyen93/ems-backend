@@ -4,7 +4,7 @@
 const Sequelize = require('sequelize')
 
 // Connection to Database (entry point)
-const db = new Sequelize('ems-backend', 'postgres', 'password', {
+const db = new Sequelize('ems-backend', 'postgres', 'ht2077', {
     host: 'localhost',
     dialect: 'postgres'
 });

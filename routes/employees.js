@@ -13,5 +13,9 @@ router.get('/', ash(async(req, res) => {
   let employees = await Employee.findAll({include: [Task]});
   res.status(200).json(employees);
 }));
-
+/** get employees by id**/
+router.get('/:id', ash(async (req, res) => {
+  let employee = await Employee.findByPk(req.params.id, { include: [Task] });
+  res.status(200).json(employee);
+}));
 module.exports = router
