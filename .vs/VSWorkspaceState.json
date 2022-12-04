@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\database",
+    "\\database\\models",
+    "\\database\\utils",
     "\\routes"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\app.js",
   "PreviewInSolutionExplorer": false
 }

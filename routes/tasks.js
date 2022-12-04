@@ -16,5 +16,10 @@ router.get('/', ash(async (req, res) => {
   let tasks = await Task.findAll();
   res.status(200).json(tasks);
 }));
+//** get course by id **//
+router.get('/:id', ash(async (req, res) => {
+    let task = await Task.findByPk(req.params.id, { include: [Employee] });
+    res.status(200).json(task);
+}));
 
 module.exports = router;
