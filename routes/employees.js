@@ -18,4 +18,15 @@ router.get('/:id', ash(async (req, res) => {
   let employee = await Employee.findByPk(req.params.id, { include: [Task] });
   res.status(200).json(employee);
 }));
+/** Edit employees**/
+
+router.put('/:id', ash(async (req, res) => {
+  await Employee.update(req.body, {
+      where: {
+          id: req.params.id
+      }
+  });
+  let employee = await Employee.findByPk(req.params.id, { include: [Task] });
+  res.status(201).json(employee);
+}));
 module.exports = router
