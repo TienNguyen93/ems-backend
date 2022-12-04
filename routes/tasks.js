@@ -8,10 +8,13 @@ const { Task, Employee } = require('../database/models');
 // them to the error-handling middleware (defined in app.js)
 const ash = require('express-async-handler');
 
-/** GET ALL EMPLOYEES */
-router.get('/', ash(async(req, res) => {
-  let employees = await Employee.findAll({include: [Task]});
-  res.status(200).json(employees);
+/** GET ALL TASKS: express-async-handler (ash) */
+// automatically catches any error and sends to middleware
+// same as using try/catch and calling next(error)
+router.get('/', ash(async (req, res) => {
+  //{include: [Employee]}
+  let tasks = await Task.findAll();
+  res.status(200).json(tasks);
 }));
 
-module.exports = router
+module.exports = router;

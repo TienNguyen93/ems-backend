@@ -1,22 +1,22 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
-const Employee = db.define("employee", {
+const Task = db.define("task", {
 
-  first_name: {
+  description: {
     type: Sequelize.STRING,
     allowNull: false
   },
 
-  last_name: {
+  priority_level: {
     type: Sequelize.STRING,
     allowNull: false
   },
 
-  department: {
-    type: Sequelize.STRING,
+  completion_status: {
+    type: Sequelize.BOOLEAN,
   }
 
 });
 
-module.exports = Employee;
+module.exports = Task;
