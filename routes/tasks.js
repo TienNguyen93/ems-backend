@@ -21,6 +21,11 @@ router.get('/:id', ash(async (req, res) => {
   let task = await Task.findByPk(req.params.id, { include: [Employee] });
   res.status(200).json(task);
 }));
+//** add new task **/
+router.post('/', function(req,res,next){
+  Task.create(req.body)
+  .then(createdTask => res.status(200).json(createdTask)).catch(err=>next(err));
+});
 //** update task by id **//
 router.put('/:id', ash(async (req, res) => {
   await Task.update(req.body, {
