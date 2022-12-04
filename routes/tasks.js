@@ -34,5 +34,14 @@ router.put('/:id', ash(async (req, res) => {
   let tasks = await Task.findByPk(req.params.id);
   res.status(201).json(tasks);
 }));
-
+//** delete task **//
+router.delete('/:id',function(req,res,next) {
+  Task.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(() => res.status(200).json("deleted a task"))
+  .catch(err => next(err));
+});
 module.exports = router;
