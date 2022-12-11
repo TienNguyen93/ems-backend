@@ -1,6 +1,6 @@
 const dbName = 'ems-backend';
 const dbUser = 'postgres';
-const dbPwd = 'ht2077';
+const dbPwd = 'password';
 
 module.exports = {
     dbName,
